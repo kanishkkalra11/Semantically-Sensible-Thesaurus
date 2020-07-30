@@ -1,0 +1,26 @@
+{% extends 'SST/base.html' %}
+{% block content %}
+{% csrf_token %}
+{% load static %}
+
+<hr color="#4CAF50" width="80%" size="5px">
+<h1><center>Help Us Improve</center></h1>
+<hr color="#4CAF50" width="80%" size="5px">
+<div class="form-container"></div>
+<form method = "POST" enctype="multipart/form-data">{% csrf_token %}
+<div class="preds">
+{% block sent %}
+{% endblock %}
+
+<input type="text" name="sentence" placeholder="Enter the sentence with the most suitable replacement ..."><br>
+</div>
+
+
+    <br><input type="submit" value="Submit" formaction="http://localhost:8000/LearningStarted/"><br>
+    <input type="submit" value="Try Another Sentence!" formaction="http://localhost:8000/">
+</form></div>
+<br>
+
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'SST/base.html' %}
+{% block content %}
+<div class="form-container">
+    <form method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <input type="text" name="sentence" placeholder="Enter a sentence for which you need verb replacement..."><br><br>
+        <input type="submit" value="Submit to Tensor Model" formaction="http://localhost:8000/TensorModel/"><br><br>
+        <input type="submit" value="Submit to BERT Model" formaction="http://localhost:8000/Bert/"><br><br>
+        <input type="submit" value="Submit to Good English Model" formaction="http://localhost:8000/GoodEnglishModel/">
+<!-- three different paths here
+     http://localhost:8000/GoodEnglishModel/
+    http://localhost:8000/TensorModel/
+http://localhost:8000/Bert/  -->
+    </form>
+
+    </div>
+{% endblock %}

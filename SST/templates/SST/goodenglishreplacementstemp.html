@@ -1,0 +1,42 @@
+{% extends 'SST/base.html' %}
+{% block content %}
+{% csrf_token %}
+{% load static %}
+<hr color="#4CAF50" width="80%" size="5px">
+<h1><center>Good English Model</center></h1>
+<hr color="#4CAF50" width="80%" size="5px">
+
+
+<div class="preds">
+{% block sent %}
+{% endblock %}
+</div>
+
+
+
+
+
+<div class="form-container">
+    <form>
+            <input type="submit" value="Try Another Sentence!" formaction="http://localhost:8000/">
+        </form>
+        <br>
+    <div class="dropdown">
+        <button class="dropbtn_img">How did we do this?</button>
+        <div class="dropdown-content">
+        <li><img src="{% static "SST/goodenglish.JPG" %}"></li>
+        </div>
+      
+    </div>
+
+    <form>
+           <br> <input type="submit" value="Help us improve the model!" formaction="http://localhost:8000/OnlineLearning/">
+        </form>
+          
+    </div>
+
+    
+</div>
+
+
+{% endblock %}
